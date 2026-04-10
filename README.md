@@ -1,2 +1,2 @@
 # Leetcode_java
-leetcode practise
+leetcode-problems-python
