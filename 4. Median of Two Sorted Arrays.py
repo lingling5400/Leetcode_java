@@ -1,4 +1,4 @@
-//未成功
+//未成功:wrong answer
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m=nums1.length;
@@ -16,11 +16,11 @@ class Solution {
             int j=mid-i; //j為num2s中間的切割位置
 
             //檢查各個邊界，確認左邊小於右邊
-            if(nums1[i-1]>nums2[j]){  
+            if (i > 0 && j < n && nums1[i-1] > nums2[j]){  
                 right=i-1;  //nums1切割位置往左一格
             }
 
-            else if(nums2[j-1] > nums1[i]){
+            else if (j > 0 && i < m && nums2[j-1] > nums1[i]){
                 left=i+1;   //nums1切割位置往右一格
             }
 
@@ -48,9 +48,9 @@ class Solution {
                     rightMin = Math.min(nums1[i], nums2[j]);
                 } 
 
-                return (rightMin+leftMax)/2;
+                return (rightMin+leftMax)/2.0;  //除整數（小數會被砍掉）
             }
         }
-        return 
+        throw new RuntimeException();
     }
 }
